@@ -39,8 +39,9 @@ class RabbitmqConsumer_in:
     print(f'Listen RabbitMQ on Port 5672')
     self.__channel.start_consuming()
 
-def minha_callback(ch, method, properties, body):
+
+def minha_callback_in(ch, method, properties, body):
   print(body)
 
-rabbitmq_consumer_in = RabbitmqConsumer_in(minha_callback)
-rabbitmq_consumer_in.start()
+#rabbitmq_consumer_in = RabbitmqConsumer_in(minha_callback_in)
+#rabbitmq_consumer_in.start()
