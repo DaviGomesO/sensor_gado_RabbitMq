@@ -1,23 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Mensagens do RabbitMQ</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sensor de gado</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <script>
     // Função para atualizar a página a cada 5 segundos (5000 milissegundos)
-    setInterval(function() {
+    setInterval(function () {
       location.reload();
     }, 5000);
   </script>
   <body>
-    <h1>Sensor de gados em um cercado</h1>
-    <h2>Dentro</h2>
-    <ul>
-      <li>{{ mensagens_dentro }}</li>
-    </ul>
-    <h2>Fora</h2>
-    <ul>
-      <li>{{ mensagens_fora }}</li>
-    </ul>
+    <main>
+      <header>
+        <h1>Sensor de gados em um cercado</h1>
+        <img src="{{ url_for('static', filename='cow.png') }}" alt="cow">
+      </header>
+      <section>
+        <div class="card">
+          <h2>Dentro</h2>
+          <p>{{ mensagens_dentro }}</p>
+        </div>
+        <div class="card">
+          <h2>Fora</h2>
+          <p>{{ mensagens_fora }}</p>
+      </section>
+    </main>
   </body>
 </html>
